@@ -8,7 +8,7 @@
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -24,7 +24,8 @@
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-    & > * {
+    backface-visibility: hidden;
+    & > *:not(:last-child) {
       color: #fff;
       display: block;
       text-transform: uppercase;
@@ -33,11 +34,13 @@
       font-size: 6rem;
       font-weight: 400;
       letter-spacing: 3.5rem;
+      animation: moveInLeft 1s ease-out;
     }
     &--sub {
       font-size: 2rem;
       font-weight: 700;
       letter-spacing: 1.74rem;
+      animation: moveInRight 1s ease-out;
     }
   }
 }
