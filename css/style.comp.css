@@ -156,25 +156,6 @@ body {
   :hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
 
-.feature-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  display: inline-block;
-  text-align: center;
-  padding: 2.5rem;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: transform .3s; }
-  .feature-box:hover {
-    transform: translateY(-3px) scale(1.05); }
-  .feature-box__icon {
-    font-size: 6rem;
-    background-image: linear-gradient(to right, #7ed56f, #28b485);
-    -webkit-background-clip: text;
-    margin-top: .5rem;
-    color: transparent;
-    display: inline-block; }
-
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -183,26 +164,36 @@ body {
   clear: both; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
-  .row::after {
-    content: "";
-    display: block;
-    clear: both; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
   height: 95vh;
@@ -241,8 +232,9 @@ body {
 
 .about {
   padding: 30rem 0;
-  margin-top: -20vh;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  margin-top: -24vh;
+  height: 100vh; }
   .about__heading-secondary {
     font-size: 3.5rem;
     letter-spacing: 2px;
@@ -260,12 +252,3 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     text-transform: uppercase; }
-
-.features {
-  padding: 20rem 0;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
-  background-size: cover;
-  transform: skewY(-7deg);
-  margin-top: -10rem; }
-  .features > * {
-    transform: skewY(7deg); }
